@@ -2,6 +2,7 @@
 
 use App\Train;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class TrainsSeeder extends Seeder
 {
@@ -34,15 +35,15 @@ class TrainsSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         foreach($this->valori_seri as $riga){
             Train::create($riga);
         }
-        //
+        //Prova con faker
         // for($i = 0; $i < 100; $i++){
         //     $train = new Train();
-        //     $train->azienza = "Italo";
+        //     $train->azienda = $faker->city();
         // }
     }
 }
